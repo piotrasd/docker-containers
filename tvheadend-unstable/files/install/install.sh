@@ -16,7 +16,7 @@ apt-get update -qq
 apt-get install -qy --no-install-recommends \
 				build-essential pkg-config libssl-dev git bzip2 wget \
 				libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python \
-				liburiparser1 liburiparser-dev gettext \
+				liburiparser1 liburiparser-dev gettext cmake cmake-data libarchive13 libnettle4 \
 				libhdhomerun-dev dvb-apps \
 				libarchive-zip-perl libdata-dump-perl libdate-manip-perl libdatetime-format-iso8601-perl libdatetime-format-strptime-perl \
 				libdatetime-perl libdatetime-timezone-perl libhtml-parser-perl libhtml-tableextract-perl libhtml-tree-perl \

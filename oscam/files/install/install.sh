@@ -31,7 +31,7 @@ apt-get install -qy --no-install-recommends \
 cd /tmp && \
 svn checkout http://www.streamboard.tv/svn/oscam/trunk oscam-svn
 pushd /tmp/oscam-svn 
-./config.sh --enable all --disable HAVE_DVBAPI IPV6SUPPORT LCDSUPPORT LEDSUPPORT READ_SDT_CHARSETS CARDREADER_DB2COM CARDREADER_STAPI CARDREADER_STAPI5 CARDREADER_STINGER CARDREADER_INTERNAL CARDREADER_INTERNAL
+./config.sh --enable all --disable IPV6SUPPORT LCDSUPPORT LEDSUPPORT READ_SDT_CHARSETS CARDREADER_DB2COM CARDREADER_STAPI CARDREADER_STAPI5 CARDREADER_STINGER CARDREADER_INTERNAL CARDREADER_INTERNAL
 make OSCAM_BIN=/usr/bin/oscam NO_PLUS_TARGET=1 CONF_DIR=/config pcsc-libusb
 popd
 
@@ -50,7 +50,9 @@ chmod +x /etc/service/oscam/run
 mkdir -p /etc/service/pcscd
 cat <<'EOT' > /etc/service/pcscd/run
 #!/bin/bash
-exec /usr/sbin/pcscd
+rm /var/run/pcscd/pcscd.comm
+rm /var/run/pcscd/pcscd.pid
+exec /usr/sbin/pcscd -f > /dev/null 2>&1
 EOT
 chmod +x /etc/service/pcscd/run
 

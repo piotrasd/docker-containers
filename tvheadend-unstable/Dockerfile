@@ -1,5 +1,4 @@
 FROM phusion/baseimage:0.9.18
-MAINTAINER tobbenb <torbjornbrekke@gmail.com>
 
 # Set correct environment variables.
 ENV HOME="/root" DEBIAN_FRONTEND="noninteractive"

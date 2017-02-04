@@ -37,7 +37,11 @@ popd
 pushd /tmp/tvheadend
 git checkout master 
 wget https://github.com/tvheadend/tvheadend/pull/920.patch
+wget https://github.com/tvheadend/tvheadend/pull/921.patch
+wget https://github.com/tvheadend/tvheadend/pull/923.patch
 patch -p1 < 920.patch
+patch -p1 < 921.patch
+patch -p1 < 923.patch
 ./configure --enable-libffmpeg_static 
 make 
 make install

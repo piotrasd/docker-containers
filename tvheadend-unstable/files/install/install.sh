@@ -38,7 +38,7 @@ pushd /tmp/tvheadend
 git checkout master
 wget https://github.com/tvheadend/tvheadend/pull/1104.patch
 patch -p1 < 1104.patch
-./configure --enable-libffmpeg_static 
+./configure --enable-libffmpeg_static --enable-dvbcsa
 make 
 make install
 popd

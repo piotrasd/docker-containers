@@ -35,9 +35,7 @@ pushd /tmp/
 git clone https://github.com/tvheadend/tvheadend.git 
 popd
 pushd /tmp/tvheadend
-git checkout master
-wget https://github.com/tvheadend/tvheadend/commit/f0618ec9891ca8d1864e165f7814310e3dbe8df2.patch
-patch -p1 -R < f0618ec9891ca8d1864e165f7814310e3dbe8df2.patch
+git checkout 4a7929490c25cd294c2b0f9318e3f631ae155f39
 ./configure --enable-libffmpeg_static --disable-dvbcsa
 make 
 make install

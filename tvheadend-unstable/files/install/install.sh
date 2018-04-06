@@ -17,7 +17,7 @@ apt-get install -qy --no-install-recommends \
 				build-essential pkg-config libssl-dev git bzip2 wget \
 				libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python \
 				liburiparser1 liburiparser-dev gettext cmake cmake-data libarchive13 libnettle4 \
-				libhdhomerun-dev dvb-apps libdvbcsa-dev liburiparser-dev \
+				libhdhomerun-dev dvb-apps libdvbcsa-dev liburiparser-dev libpcre3-dev ccache \
 				libarchive-zip-perl libdata-dump-perl libdate-manip-perl libdatetime-format-iso8601-perl libdatetime-format-strptime-perl \
 				libdatetime-perl libdatetime-timezone-perl libhtml-parser-perl libhtml-tableextract-perl libhtml-tree-perl \
 				libhttp-cache-transparent-perl libio-compress-perl libio-stringy-perl libjson-perl libparse-recdescent-perl \
@@ -35,7 +35,7 @@ pushd /tmp/
 git clone https://github.com/tvheadend/tvheadend.git 
 popd
 pushd /tmp/tvheadend
-./configure --enable-libffmpeg_static --disable-tvhcsa
+./configure --enable-libffmpeg_static
 make 
 make install
 popd
